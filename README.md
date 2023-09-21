@@ -1,9 +1,15 @@
 ## Este é o GERA_OCR!
 
 ## Como usar?
-### Execute o arquivo e selecione o pdf a ser convertido a OCR.
+### 1. Crie uma pasta vázia qualquer.
+### 2. Coloque o .py dentro desta pasta vazia.
+### 3. Coloque um PDF dentro desta pasta com o .py
+### 4. Execute o .py
+### 5. Deixe a mágia acontecer!
 
-// Ainda sendo codado! 
-// Atualmente você deve criar uma pasta e arrastar o arquivo para esta pasta,
-// e excutar o arquivo PYTHON.(O arquivo PDF deve estar no mesmo diretório do Arquivo GeraOCR.PY)
+---
+
+// # [Ainda sendo codado!] 
+// Atualmente consegue ler com acurácia 90% do texto documentos bem formatados.
+//
 
