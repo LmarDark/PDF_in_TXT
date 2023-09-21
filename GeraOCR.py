@@ -1,10 +1,12 @@
 # BIBLIOTECAS #
+
 import fitz
 import os
 import pytesseract
 import cv2 
 from tkinter import messagebox
 import comtypes.client
+
 # BIBLIOTECAS #
 
 msg_cnv = messagebox.showinfo("Convertendo Imagem...", "Deixa comigo!")
@@ -15,12 +17,12 @@ msg_cnv = messagebox.showinfo("Convertendo Imagem...", "Deixa comigo!")
             # Enquanto o "Fitz" é o cara que vai converter os PDFs. #
 
 # DIRETÓRIO ONDE SE ENCONTRA O SEU PSD QUE SERÁ CONVERTIDO EM IMAGEM #            
-pathpdfimg = R"C:\Users\Usuario\Desktop\1. AleRO\Projeto\ReconhecerImgNv" 
+pathpdfimg = R"C:\Users\98555200253\Desktop\PDF_IN_TXT" 
 pdflist = os.listdir(pathpdfimg)
 print(pdflist)
 
 # !! CAMINHO DO TESSERACT PARA QUEM USA WINDOWS !! #
-caminho = R"C:\Users\Usuario\AppData\Local\Programs\Tesseract-OCR"
+caminho = R"C:\Users\98555200253\AppData\Local\Programs\Tesseract-OCR"
 pytesseract.pytesseract.tesseract_cmd = caminho + R"\Tesseract.exe"
 # !! CAMINHO DO TESSERACT PARA QUEM USA WINDOWS !! #
 
@@ -45,12 +47,14 @@ pag_nam_out = 0
 pag = (pag + 1) # ADICIONEI O VALOR +1 PARA FUNCIONAR NA VÁRIAVEL REMOVE DO "OS" (ELE APAGAVA SEMPRE O 'VALOR SAÍDA' OU O ÚLTIMO E DEPOIS O TESSERACT NÃO ENCONTRAVA O ARQUIVO) #
 # !! VÁRIAVEIS QUE CRIEI PRO PROGRAMA FUNCIONAR !! #
 
-doctexto = open("Template.txt", "a")
+# doctexto = open("Template.txt", "a") #
 
 while (outpu > pag_in_out): # ENQUANTO OUTPU FOR MAIOR QUE PAG_IN_OUT ELE CONTINUARA EXECUTANDO O COMANDO ABAIXO #
-    resul = pytesseract.image_to_string(f'img_{outpu}.jpg') # LÊ AS LINHAS DA IMAGEM(AQUI QUE A MAGIA ACONTE) #
+    resul = pytesseract.image_to_string(f'img_{outpu}.jpg', config='--psm 10 --oem 3 -c tessedit_char_whitelist=0123456789') # LÊ AS LINHAS DA IMAGEM(AQUI QUE A MAGIA ACONTE) #
     print(resul) # PRINTA O RESULTADO #
-    doctexto.write(resul) # OUTPUT / BLOCO DE NOTAS #
+
+    # doctexto.write(resul) # OUTPUT / BLOCO DE NOTAS #
+
     outpu = (outpu - 1) # DIMINUI O OUTPU QUE É RELACIONADO AO NÚMERO DE PÁGINAS (IMG_1...) #
 
 while (outpi < pag): # ENQUANTO OUTPI FOR MENOR QUE PAG ELE EXECUTARA O COMANDO ABAIXO QUANTAS VEZES FOR PRECISO #
@@ -58,6 +62,10 @@ while (outpi < pag): # ENQUANTO OUTPI FOR MENOR QUE PAG ELE EXECUTARA O COMANDO 
         outpi = (outpi + 1) # ADICIONA O VALOR PARA IR APAGANDO RELACIONADO AS PÁGINAS (IMG_1...) #  
     
 else:
+
+    msg_fim = messagebox.showinfo("Atenção!", "Prontinho, Volte sempre!")    
+
+"""
     path = pathpdfimg
     word = comtypes.client.CreateObject("Template.docx")
     word.Documents.Open(path,ReadOnly=1)
@@ -65,6 +73,7 @@ else:
     word.Documents(1).Close(SaveChanges=0)
     word.Application.Quit()
     wd=0
-    msg_fim = messagebox.showinfo("Atenção!", "Prontinho, Volte sempre!")    
+"""
+    
 
 
