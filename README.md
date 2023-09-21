@@ -24,7 +24,10 @@
 
 
 
+
 3. Coloque um PDF dentro desta pasta com o .py
+
+
 
 
 
@@ -36,10 +39,12 @@
 
 
 
+
+
 5. Deixe a mágia acontecer!
 
 
 
 
 
-5.
+
