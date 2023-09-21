@@ -9,7 +9,31 @@
 
 ---
 
-// # [Ainda sendo codado!] 
-// Atualmente consegue ler com acurácia 90% do texto documentos bem formatados.
-//
+1. Criando uma pasta em qualquer lugar:
 
+
+
+
+
+
+
+2.
+
+
+
+
+
+
+3.
+
+
+
+
+
+4.
+
+
+
+
+
+5.
