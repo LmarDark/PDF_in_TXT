@@ -17,20 +17,26 @@
 
 
 
-2.
+2. Coloque o .py dentro desta pasta vazia. 
 
 
 
 
 
 
-3.
+3. Coloque um PDF dentro desta pasta com o .py
 
 
 
 
 
-4.
+4. Execute o .py
+
+
+
+
+
+5. Deixe a mágia acontecer!
 
 
 
