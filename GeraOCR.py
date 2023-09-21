@@ -66,7 +66,7 @@ while (outpu > pag_in_out): # ENQUANTO OUTPU FOR MAIOR QUE PAG_IN_OUT ELE CONTIN
         image = image.resize(size, Image.LANCZOS)
     image.save(f'img_{outpu}.jpg', dpi=(300, 300))
 
-    resul = pytesseract.image_to_string(f'img_{outpu}.jpg', config='--psm 1 --oem 1 -c tessedit_char_whitelist=123456789') # LÊ AS LINHAS DA IMAGEM(AQUI QUE A MAGIA ACONTE) #
+    resul = pytesseract.image_to_string(f'img_{outpu}.jpg') # LÊ AS LINHAS DA IMAGEM(AQUI QUE A MAGIA ACONTE) #
 
     print(resul) # PRINTA O RESULTADO #
 
@@ -90,12 +90,6 @@ else:
     word.Documents(1).Close(SaveChanges=0)
     word.Application.Quit()
     wd=0
-"""
-
-"""
-
-f'img_{outpu}.jpg', config='--psm 1 --oem 1 -c tessedit_char_whitelist=123456789'
-
 """
     
 
