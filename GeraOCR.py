@@ -51,8 +51,6 @@ pag = (pag + 1) # ADICIONEI O VALOR +1 PARA FUNCIONAR NA VÁRIAVEL REMOVE DO "OS
 
 # doctexto = open("Template.txt", "a") #
 
-
-
 while (outpu > pag_in_out): # ENQUANTO OUTPU FOR MAIOR QUE PAG_IN_OUT ELE CONTINUARA EXECUTANDO O COMANDO ABAIXO #
 
     length_x = 100
@@ -81,6 +79,8 @@ while (outpi < pag): # ENQUANTO OUTPI FOR MENOR QUE PAG ELE EXECUTARA O COMANDO 
 else:
 
     msg_fim = messagebox.showinfo("Atenção!", "Prontinho, Volte sempre!")    
+
+# CÓDIGOS DESCARTADOS #
 
 """
     path = pathpdfimg
