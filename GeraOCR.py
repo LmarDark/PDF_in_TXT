@@ -50,7 +50,11 @@ pag = (pag + 1) # ADICIONEI O VALOR +1 PARA FUNCIONAR NA VÁRIAVEL REMOVE DO "OS
 # doctexto = open("Template.txt", "a") #
 
 while (outpu > pag_in_out): # ENQUANTO OUTPU FOR MAIOR QUE PAG_IN_OUT ELE CONTINUARA EXECUTANDO O COMANDO ABAIXO #
-    resul = pytesseract.image_to_string(f'img_{outpu}.jpg', config='--psm 10 --oem 3 -c tessedit_char_whitelist=0123456789') # LÊ AS LINHAS DA IMAGEM(AQUI QUE A MAGIA ACONTE) #
+    resul = pytesseract.image_to_string(f'img_{outpu}.jpg', config='--psm 1 --oem 3 -c tessedit_char_whitelist=123456789') # LÊ AS LINHAS DA IMAGEM(AQUI QUE A MAGIA ACONTE) #
+
+    Tesseract it = new Tesseract();
+    it.setTessVariable("user_defined_dpi", "300");
+
     print(resul) # PRINTA O RESULTADO #
 
     # doctexto.write(resul) # OUTPUT / BLOCO DE NOTAS #
