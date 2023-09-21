@@ -5,6 +5,8 @@ import os
 import pytesseract
 import cv2 
 from tkinter import messagebox
+import PIL
+from PIL import Image
 import comtypes.client
 
 # BIBLIOTECAS #
@@ -49,11 +51,22 @@ pag = (pag + 1) # ADICIONEI O VALOR +1 PARA FUNCIONAR NA VÁRIAVEL REMOVE DO "OS
 
 # doctexto = open("Template.txt", "a") #
 
-while (outpu > pag_in_out): # ENQUANTO OUTPU FOR MAIOR QUE PAG_IN_OUT ELE CONTINUARA EXECUTANDO O COMANDO ABAIXO #
-    resul = pytesseract.image_to_string(f'img_{outpu}.jpg', config='--psm 1 --oem 3 -c tessedit_char_whitelist=123456789') # LÊ AS LINHAS DA IMAGEM(AQUI QUE A MAGIA ACONTE) #
 
-    Tesseract it = new Tesseract();
-    it.setTessVariable("user_defined_dpi", "300");
+
+while (outpu > pag_in_out): # ENQUANTO OUTPU FOR MAIOR QUE PAG_IN_OUT ELE CONTINUARA EXECUTANDO O COMANDO ABAIXO #
+
+    length_x = 100
+    width_y = 200
+
+    image = Image.open(f'img_{outpu}.jpg')
+    image = image.convert(mode='L')
+    factor = max(1, float(2500.0 / length_x))
+    if factor>1:
+        size = int(factor * length_x), int(factor * width_y)    
+        image = image.resize(size, Image.LANCZOS)
+    image.save(f'img_{outpu}.jpg', dpi=(300, 300))
+
+    resul = pytesseract.image_to_string(f'img_{outpu}.jpg', config='--psm 1 --oem 1 -c tessedit_char_whitelist=123456789') # LÊ AS LINHAS DA IMAGEM(AQUI QUE A MAGIA ACONTE) #
 
     print(resul) # PRINTA O RESULTADO #
 
@@ -77,6 +90,12 @@ else:
     word.Documents(1).Close(SaveChanges=0)
     word.Application.Quit()
     wd=0
+"""
+
+"""
+
+f'img_{outpu}.jpg', config='--psm 1 --oem 1 -c tessedit_char_whitelist=123456789'
+
 """
     
 
