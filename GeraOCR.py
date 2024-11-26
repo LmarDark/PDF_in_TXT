@@ -18,13 +18,13 @@ msg_cnv = messagebox.showinfo("Convertendo Imagem...", "Deixa comigo!")
         # "OS" é a biblioteca que irá apontar o diretório dos PDF; #
             # Enquanto o "Fitz" é o cara que vai converter os PDFs. #
 
-# DIRETÓRIO ONDE SE ENCONTRA O SEU PSD QUE SERÁ CONVERTIDO EM IMAGEM #            
-pathpdfimg = R"C:\Users\98555200253\Desktop\PDF_IN_TXT" 
+# DIRETÓRIO ONDE SE ENCONTRA O SEU PDF QUE SERÁ CONVERTIDO EM IMAGEM #            
+pathpdfimg = [[CAMINHO_DAS_IMAGENS_QUE_SERAM_CONVERTIDAS]
 pdflist = os.listdir(pathpdfimg)
 print(pdflist)
 
 # !! CAMINHO DO TESSERACT PARA QUEM USA WINDOWS !! #
-caminho = R"C:\Users\98555200253\AppData\Local\Programs\Tesseract-OCR"
+caminho = [CAMINHO_DO_SEU_TESSERACT]
 pytesseract.pytesseract.tesseract_cmd = caminho + R"\Tesseract.exe"
 # !! CAMINHO DO TESSERACT PARA QUEM USA WINDOWS !! #
 
