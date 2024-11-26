@@ -19,7 +19,7 @@ msg_cnv = messagebox.showinfo("Convertendo Imagem...", "Deixa comigo!")
             # Enquanto o "Fitz" é o cara que vai converter os PDFs. #
 
 # DIRETÓRIO ONDE SE ENCONTRA O SEU PDF QUE SERÁ CONVERTIDO EM IMAGEM #            
-pathpdfimg = [[CAMINHO_DAS_IMAGENS_QUE_SERAM_CONVERTIDAS]
+pathpdfimg = [[CAMINHO_DOS_PDFs_QUE_SERAM_CONVERTIDAS]
 pdflist = os.listdir(pathpdfimg)
 print(pdflist)
 
